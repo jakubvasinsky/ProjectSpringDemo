@@ -2,18 +2,18 @@ package sk.kosickaakademia.vasinsky.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class HelloSpringApp {
+public class BeanLifeCycleDemoApp {
     public static void main(String[] args) {
+
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
+                new ClassPathXmlApplicationContext("beanLifeCycle-applicationContext.xml");
 
-        sk.kosickaakademia.vasinsky.springdemo.Coach theCoach= context.getBean("myCoach", sk.kosickaakademia.vasinsky.springdemo.Coach.class);
+        Coach theCoach = context.getBean("myCoach", Coach.class);
         System.out.println(theCoach.getDailyWorkout());
-
-        System.out.println(theCoach.getDailyFortune());
 
         context.close();
 
 
     }
+
 }

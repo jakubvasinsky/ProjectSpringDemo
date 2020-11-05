@@ -6,7 +6,6 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:property-placeholder location="classpath:sport.properties"/>
 
 
 
@@ -15,17 +14,12 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     </bean>
 
     <bean id="myCoach"
-          class="sk.kosickaakademia.vasinsky.springdemo.TrackCoach">
+          class="sk.kosickaakademia.vasinsky.springdemo.TrackCoach"
+           scope="prototype">
+
         <constructor-arg ref="myFortune"/>
     </bean>
-<bean id="myCricketCoach"
-      class="sk.kosickaakademia.vasinsky.springdemo.CricketCoach">
-<property name="fortuneService" ref="myFortune"/>
-    <property name="emailAdress" value="${foo.email}"/>
-    <property name="team" value="${foo.team}"/>
 
-
-</bean>
 
 
 
